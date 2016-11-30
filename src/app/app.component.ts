@@ -1,20 +1,24 @@
 import { Component } from '@angular/core';
-import { SampleService } from './services/sampleService';
+import { BookService } from './services/bookService';
+import { Book } from './classes/book';
 
 @Component({
   selector: 'app-root',
-  template: '<h1>I am a new <h2>{{Title}}</h2> app.</h1>',
+  template: `<h1>Sample App</h1>
+              <div *ngFor="let book of Books">
+                <div><h2>{{book.Name}} - {{book.Author | uppercase }}</h2></div>
+              </div>
+              `,
   styles: [`h1 { color: red } 
             h2 { font-size: 20px; color: blue }`],
-  providers: [ SampleService ]
+  providers: [ BookService ]
 })
 
 export class AppComponent {
-  Title: string;
-
-  constructor(_sampleService: SampleService)
-  {
-    let sampleObj = _sampleService.getSampleObject();
-    this.Title = sampleObj.Title;
+  Books: Book[];
+  
+  constructor(_sampleService: BookService)  {
+    this.Books =  _sampleService.getBooks();
   }
 }
+
