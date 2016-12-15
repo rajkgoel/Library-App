@@ -11,5 +11,13 @@ export class BookService {
             ];
        return books;
     }
+
+    getMoreBooks(): Book[] {
+        let books = [ 
+            new Book("Type Script", "Steve Fenton", 2015), 
+            new Book("Angular CLI", "Mike Brocchi", 2015)
+            ];
+       return books;
+    }
 }
 

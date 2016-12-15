@@ -1,0 +1,9 @@
+<h1>{{pageTitle}}</h1>
+<div *ngFor="let book of Books">
+    <div>
+        <h2>{{book.Name}} - {{book.Author | uppercase }}</h2>
+    </div>
+</div>
+<div>
+    <button (click)="getMoreBooks()">Get More Books</button>
+</div>
