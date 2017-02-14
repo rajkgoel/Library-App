@@ -1,0 +1,23 @@
+<h1>{{pageTitle}}</h1>
+
+<table>
+    <th>
+        <tr>
+            <td>Title</td>
+            <td>{{bookDetail.Name}}</td>
+        </tr>
+    </th>
+    <tr>
+        <td>Author</td>
+        <td>{{bookDetail.Author}}</td>
+    </tr>
+    <tr>
+        <td>Publication Year</td>
+        <td>{{bookDetail.PublicationYear}}</td>
+    </tr>
+    <tr>
+        <td>Price</td>
+        <td>{{bookDetail.Price | currency:'USD'}}</td>
+    </tr>
+</table>
+

@@ -1,23 +1,32 @@
 import { Injectable } from '@angular/core';
 import { Book } from '../classes/book';
+import { BookDetail } from '../classes/book-detail';
+import { Observable }     from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
 
 @Injectable()
 export class BookService {
 
-    getBooks(): Book[] {
-        let books = [ 
-            new Book("Angular JS", "Ken Williamson", 2013), 
-            new Book("C#", "Jon Skeet", 2004)
+    private books : BookDetail[] = [ 
+            new BookDetail("Angular JS", "Ken Williamson", 2013, 60), 
+            new BookDetail("C#", "Jon Skeet", 2004, 65),
+            new BookDetail("Type Script", "Steve Fenton", 2015, 50), 
+            new BookDetail("Angular CLI", "Mike Brocchi", 2015, 48)
             ];
-       return books;
+
+    getBooks(): Book[] {
+        let returnBooks = this.books.slice(0, 2) as Book[];
+        return returnBooks;
     }
 
     getMoreBooks(): Book[] {
-        let books = [ 
-            new Book("Type Script", "Steve Fenton", 2015), 
-            new Book("Angular CLI", "Mike Brocchi", 2015)
-            ];
-       return books;
+        let returnBooks = this.books.slice(2, 4) as Book[];
+        return returnBooks;
+    }
+
+    getBookDetails(bookName: string) : Observable<BookDetail> {
+        let bookDetail = this.books.find(b => b.Name==bookName);
+        return Observable.of(bookDetail);
     }
 }
 
