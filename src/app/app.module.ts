@@ -4,15 +4,28 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { BookDetailsComponent } from './book-details.component';
+import { RouterModule }   from '@angular/router';
+import { BookService } from './services/bookService';
 
 @NgModule({
-  declarations: [ AppComponent ],
+  declarations: [ AppComponent, BookDetailsComponent ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot([
+      {
+        path: 'app-root',
+        component: AppComponent
+      },
+      {
+        path: 'details/:name',
+        component: BookDetailsComponent
+      }
+    ])
   ],
-  providers: [ ],
+  providers: [ BookService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,7 +6,7 @@ import { Book } from './classes/book';
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.css'],
-  providers: [ BookService ]
+  providers: [ ]
 })
 
 export class AppComponent {

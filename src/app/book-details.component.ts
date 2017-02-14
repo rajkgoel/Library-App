@@ -24,7 +24,7 @@ export class BookDetailsComponent implements OnInit {
 
   ngOnInit(): void {
         this.route.params
-            .switchMap((params: Params) => this.bookService.getBookDetails(params['Name']))
+            .switchMap((params: Params) => this.bookService.getBookDetails(params['name']))
             .subscribe(book => this.bookDetail = book);
   }
 }
