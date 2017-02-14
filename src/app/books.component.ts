@@ -9,7 +9,6 @@ import { Book } from './classes/book';
 })
 
 export class BooksComponent {
-  pageTitle: string = "Library";
   Books: Book[];
   
   constructor(private _bookService: BookService)  {

@@ -10,7 +10,6 @@ import { RouterModule }   from '@angular/router';
 import { BookService } from './services/bookService';
 
 @NgModule({
-  declarations: [ AppComponent, BooksComponent, BookDetailsComponent ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -21,8 +20,9 @@ import { BookService } from './services/bookService';
         component: AppComponent
       },
       {
-        path: '',
-        component: BooksComponent
+        path: '', 
+        redirectTo: '/books',
+        pathMatch: 'full'
       },
       {
         path: 'books',
@@ -34,6 +34,7 @@ import { BookService } from './services/bookService';
       }
     ])
   ],
+  declarations: [ AppComponent, BooksComponent, BookDetailsComponent ],
   providers: [ BookService ],
   bootstrap: [AppComponent]
 })

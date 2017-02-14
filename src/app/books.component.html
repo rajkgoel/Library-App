@@ -1,5 +1,5 @@
 <div>
-    <a *ngFor="let book of Books"  [routerLink]="['/details', book.Name]"  class="col-1-4">
+    <a *ngFor="let book of Books"  [routerLink]="['/details', book.Name]">
     <div>
         <h2>{{book.Name}} - {{book.Author | uppercase }}</h2>
     </div>
@@ -8,5 +8,4 @@
 <div>
     <button (click)="getMoreBooks()">Get More Books</button>
 </div>
-<div>
-</div>
+
