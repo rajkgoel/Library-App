@@ -1,14 +1,2 @@
 <h1>{{pageTitle}}</h1>
-<div>
-    <a *ngFor="let book of Books"  [routerLink]="['/details', book.Name]"  class="col-1-4">
-    <div>
-        <h2>{{book.Name}} - {{book.Author | uppercase }}</h2>
-    </div>
-    </a>
-</div>
-<div>
-    <button (click)="getMoreBooks()">Get More Books</button>
-</div>
-<div>
 <router-outlet></router-outlet>
-</div>

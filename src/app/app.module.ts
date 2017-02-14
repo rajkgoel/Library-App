@@ -4,12 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { BooksComponent } from './books.component';
 import { BookDetailsComponent } from './book-details.component';
 import { RouterModule }   from '@angular/router';
 import { BookService } from './services/bookService';
 
 @NgModule({
-  declarations: [ AppComponent, BookDetailsComponent ],
+  declarations: [ AppComponent, BooksComponent, BookDetailsComponent ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -18,6 +19,14 @@ import { BookService } from './services/bookService';
       {
         path: 'app-root',
         component: AppComponent
+      },
+      {
+        path: '',
+        component: BooksComponent
+      },
+      {
+        path: 'books',
+        component: BooksComponent
       },
       {
         path: 'details/:name',

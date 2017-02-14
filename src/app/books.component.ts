@@ -3,7 +3,7 @@ import { BookService } from './services/bookService';
 import { Book } from './classes/book';
 
 @Component({
-  selector: 'lib-books',
+  selector: 'books',
   templateUrl: 'books.component.html',
   styleUrls: ['app.component.css']
 })
